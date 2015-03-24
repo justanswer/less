@@ -49,7 +49,7 @@ Best practices and guidelines for writing HTML and CSS with approachable formatt
 
 Many attributes don't require a value to be set, like `disabled` or `checked`, so don't set them.
 
-{% highlight html %}
+```html
 <input type="text" disabled>
 
 <input type="checkbox" value="1" checked>
@@ -57,7 +57,7 @@ Many attributes don't require a value to be set, like `disabled` or `checked`, s
 <select>
   <option value="1" selected>1</option>
 </select>
-{% endhighlight %}
+```
 
 For more information, [read the WhatWG section](http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes).
 
@@ -65,7 +65,7 @@ For more information, [read the WhatWG section](http://www.whatwg.org/specs/web-
 
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. For example:
 
-{% highlight html %}
+```html
 <!-- Not so great -->
 <span class="avatar">
   <img src="...">
@@ -73,7 +73,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 
 <!-- Better -->
 <img class="avatar" src="...">
-{% endhighlight %}
+```
 
 ### Forms
 
@@ -86,7 +86,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 
 Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attribute) when appropriate. (Note: `<tfoot>` goes above `<tbody>` for speed reasons. You want the browser to load the footer before a table full of data.)
 
-{% highlight html %}
+```html
 <table summary="This is a chart of invoices for 2011.">
   <thead>
     <tr>
@@ -107,7 +107,7 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attrib
     </tr>
   </tbody>
 </table>
-{% endhighlight %}
+```
 
 
 
@@ -160,7 +160,7 @@ Here are some good examples that apply the above guidelines:
 .good {
   margin-bottom: 20px;
 }
-{% endhighlight %}
+```
 
 ## File organization
 
@@ -184,7 +184,7 @@ styles
 └── shared
     ├── forms.scss
     └── markdown.scss
-{% endhighlight %}
+```
 
 ### Multiple bundles
 
@@ -202,7 +202,7 @@ stylesheets
 └── mobile
     ├── _variables.scss
     └── base.scss
-{% endhighlight %}
+```
 
 Here, we have two desktop bundles to support IE9's maximum selector limit per CSS file, as well as a dedicated mobile bundle to go with our separate mobile views.
 
@@ -217,7 +217,7 @@ Use [Sprockets](https://github.com/sstephenson/sprockets) to **require** files. 
 @import "../globals/basic";
 
 .rule { ... }
-{% endhighlight %}
+```
 
 This is also how Primer's styles are to be included, should you need them.
 
@@ -240,13 +240,13 @@ Elements that occur **exactly once** inside a page should use IDs, otherwise, us
 
 When styling a component, start with an element + class namespace (prefer class names over ids),  prefer direct descendant selectors by default, and use as little specificity as possible. Here is a good example:
 
-{% highlight html %}
+```html
 <ul class="category-list">
   <li class="item">Category 1</li>
   <li class="item">Category 2</li>
   <li class="item">Category 3</li>
 </ul>
-{% endhighlight %}
+```
 
 {% highlight scss %}
 .category-list { // element + class namespace
@@ -261,7 +261,7 @@ When styling a component, start with an element + class namespace (prefer class 
     color: #f00;
   }
 }
-{% endhighlight %}
+```
 
 ### CSS Specificity guidelines
 
