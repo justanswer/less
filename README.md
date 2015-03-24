@@ -115,7 +115,7 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attrib
 
 ### Spacing
 
-* Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in any person's environment.
+* Use soft-tabs with a four space indent. Spaces are the only way to guarantee code renders the same in any person's environment.
 * Put spaces after `:` in property declarations.
 * Put spaces before `{` in rule declarations.
 * Put line breaks between rulesets.
@@ -138,7 +138,7 @@ As a rule of thumb, avoid unnecessary nesting in SCSS. At most, aim for three le
 
 Here are some good examples that apply the above guidelines:
 
-{% highlight scss %}
+```css
 // Example of good basic formatting practices
 .styleguide-format {
   color: #000;
@@ -206,11 +206,11 @@ stylesheets
 
 Here, we have two desktop bundles to support IE9's maximum selector limit per CSS file, as well as a dedicated mobile bundle to go with our separate mobile views.
 
-### Including (S)CSS files
+### Including LESS/CSS files
 
 Use [Sprockets](https://github.com/sstephenson/sprockets) to **require** files. However, you should explicitly **import** any scss that does not generate styles (`globals/`) in the particular SCSS file you'll be needing it's helpers in.  Here's a good example:
 
-{% highlight scss %}
+```css
 //= require_tree ./plugins
 //= require my_awesome_styles
 
@@ -248,7 +248,7 @@ When styling a component, start with an element + class namespace (prefer class 
 </ul>
 ```
 
-{% highlight scss %}
+```css
 .category-list { // element + class namespace
 
   // Direct descendant selector > for list items
