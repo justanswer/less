@@ -39,11 +39,11 @@ Best practices and guidelines for writing HTML and CSS with approachable formatt
 * Avoid trailing slashes in self-closing elements. For example, `<br>`, `<hr>`, `<img>`, and `<input>`.
 * Don't set `tabindex` manually—rely on the browser to set the order.
 
-{% highlight html %}
+```html
 <p class="line-note" data-attribute="106">
   This is my paragraph of special text.
 </p>
-{% endhighlight %}
+```
 
 ### Boolean attributes
 
